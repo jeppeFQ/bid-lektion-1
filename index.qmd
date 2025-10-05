@@ -1,0 +1,1526 @@
+---
+title: "Intro til kurset—Computere, algoritmer og Python"
+subtitle: ""
+author: "Jeppe Fjeldgaard Qvist"
+date: today 
+format: 
+  revealjs:
+    include-after-body: "resources/timer.html"
+    navigation-mode: linear
+    slide-number: c
+    show-slide-number: print
+    embed-resources: true
+    self-contained-math: true
+    smaller: true
+    scrollable: true
+    theme: default 
+    include-in-header: 
+      - text: |
+          <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+          <link rel="stylesheet" href="resources/pyodide-styles.css">
+          <script src="resources/pyodide-setup.js"></script>
+          <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+          <style>
+          .reveal {
+            font-family: "Libre Baskerville", serif !important;
+          }
+          .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+            font-family: "Libre Baskerville", serif !important;
+          }
+          </style>
+---
+
+## Dagens program
+
+1. Hvem er jeg (og hvem er I)? 
+2. Hvad skal vi lære på dette modul (forventningsafstemning)? 
+3. Dagens faglige program:  
+    - Hvad er en computer (**hardware**) 
+    - Hvad er algoritmer og kode (**software**) 
+
+## Hvem er jeg? 
+
+*Jeppe Fjeldgaard Qvist*  
+- Kandidat i **samfundsfag og geografi** (AAU)  
+- **PhD** fra Institut for Politik og Samfund (AAU)  
+- **Postdoc** ved Politik og Samfund (AAU)  
+
+<br>
+
+Underviser **her** og på **Social Data Science** specialiseringen 
+
+Forsker i **diversitet på arbejdsmarkedet**
+
+## Udvikling af IT (*1-BID*)
+
+Modulet 'Udvikling af IT' giver de studerende kompetencer til at **forstå og anvende principper og praksis inden for design, udvikling og vedligehold af moderne IT-systemer med særligt fokus på den offentlige sektor**. Gennem en progressiv læringsform starter modulet med fundamentale koncepter om computere og algoritmer og bevæger sig frem mod avancerede teknologier som machine learning, kunstig intelligens og chatbots, samt deres praktiske implementeringsmuligheder i offentlige institutioner.
+
+---
+
+Undervisningen er centreret omkring **Python 3 programmering**, hvor de studerende opbygger **praktiske færdigheder** gennem workshops, der spænder fra introduktion til grundlæggende programmeringsparadigmer til interaktion med databaser. Dette praktiske fundament suppleres med **kritisk refleksion** over teknologiens samfundsmæssige betydning gennem sessioner om den digitale verdens utopiske og dystopiske potentialer, herunder væsentlige aspekter som datasikkerhed, kryptering og anonymitet.
+
+---
+
+Modulet struktureres som en **vekselvirkning mellem teoretiske tematimer og praktiske workshops**, hvor de studerende arbejder med mini-projekter og gruppeøvelser relateret til konkrete **problemstillinger i den offentlige sektor**. De anvender moderne udviklingsværktøjer som versionskontrol (Git) og markup-sprog, hvilket giver dem **erfaring med industristandard software-udviklingsprocesser**. Denne kombination af teknisk dybde og kritisk kontekstforståelse understøtter den problembaserede læringstilgang, der er central for uddannelsen, og ***forbereder de studerende på at kunne bidrage til innovative digitale transformationsprocesser i offentlige organisationer***.
+
+## Kursusgange og sammenhæng 
+:::: {.columns}
+
+::: {.column width="50%"} 
+::: {style="font-size: 0.6em;"}
+1. **Intro til kurset—Computere, algoritmer og Python**
+2. (D)en digital verden – utopi eller dystopi? Pt. 1   
+3. Programmeringsparadigmer, Algoritmer og compitationel tænkning  
+4. Git og versionskontrol   
+5. Python Programmering 1 [*workshop*]   
+6. Softwaredesign   
+7. Python Programmering 2 [*workshop*]   
+8. Machine Learning og Artificial Intelligence
+9. Python Programmering 3 [*workshop*]   
+10. Python Programmering 4 [*workshop*]   
+11. Internettet og applikationer   
+12. Chatbots, NLP og ChatGPT    
+13. Python workshop 5  [*workshop*] 
+14. (D)en digital verden – utopi eller dystopi? Pt. 2    
+15. Afslutning, Opsummering og Eksamen    
+:::
+:::
+
+::: {.column width="50%"} 
+#### Problemstillinger i den offentlige sektor
+::: {style="font-size: 0.8em;"}
+::: {.incremental}
+- Interaktion og **dialog**!      
+- **Gruppearbejde** til workshops    
+- Til workshops skal i *udvikle konkret IT* [**mini-projekter**]   
+    - Indholdet og forventninger til mini-projekterne relaterer sig til eksamen     
+    - De endelige mini-projekter præsenteres (lek. 14) som eksamensforberedelse   
+:::
+:::
+:::
+
+:::: 
+
+## Grundbøger og litteratur 
+
+- Kernighan, B. W. (2021). *Understanding the digital world: What you need to know about computers, the Internet, privacy, and security* (2nd ed.). Princeton University Press. (kan købes hos Faktum)
+
+- Downey, A. B. (2024). *Think Python: How to think like a computer scientist* (3rd ed.). O'Reilly Media. (Tilgængelig online: https://allendowney.github.io/ThinkPython/index.html)
+
+> Det forventes at i læsen **inden** forelæsningen. 
+
+::: {.aside}
+
+**Bemærk: Downey 2024, Think Python, [*Kapitel følger; opdateres iht. progression på foregående lektioner*]**
+
+:::
+
+## Eksamen 
+
+- Individuel mundtlig eksamen   
+- Spørgsmål udleveres til lek. 15; $n$ praktiske og $n$ teoretiske 
+
+# Hvad skal I have ud af dette kursus? {background-image="resources/teaching.png" background-size="50%" background-position="center" background-repeat="no-repeat" background-opacity="0.6"}
+
+## Innovation og *digitialisering*
+
+<span class="timer" data-time="180"></span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Maskinen! {background-image="resources/computer.png" background-size="50%" background-position="center" background-repeat="no-repeat" background-opacity="0.3"}
+
+## Computeren 
+
+I har alle en, men hvad er det *egentligt* for noget? 
+
+> Forestil jer en bedsteforældre, der ikke har set en computer før---**hvordan ville i forklare hende hvad er computer er**? 
+
+<span class="timer" data-time="300"></span>
+
+::: {.aside}
+**Stærkt anbefalet skønlitteratur**: Labatut, B. (2024). *Maniac* (C. Lundager, Overs.). C & K.
+:::
+
+## Hardware (1)
+
+> *"Hardware is the sold, visible part of computing: devices and equipment that you can see and put your hands on.* (Kernighan, 2021: 7)
+
+:::: {.columns}
+::: {.column width="70%"} 
+#### von Neumann arkitekturen   
+::: {.incremental}
+1. CPU (Processoren): 
+    - Et repertoire a basale operationer: 
+      - **arithmetik** (*ALU*), **flytte** data, **styre/afkode** (*Control Unit*) operationer i andre componenter 
+    - Kan udgøre disse operationer *milliarder* af gange i sekundet (**GHz**)
+      - 2.2 Ghz = $2.200.000.000$ *ticks* i sekundet
+:::
+
+::: 
+
+
+::: {.column width="30%"} 
+::: {style="font-size: 0.37em;"}
+```
+                    VON NEUMANN ARKITEKTUR
+                    =====================
+
+    ┌───────────────────────────────────────────────────────────────┐
+    │                           MEMORY                              │
+    │                         (Hukommelse)                          │
+    │                                                               │
+    │  ┌─────────────────┐    ┌─────────────────┐                   │
+    │  │   INSTRUCTIONS  │    │      DATA       │                   │
+    │  │   (Programmer)  │    │     (Data)      │                   │
+    │  │                 │    │                 │                   │
+    │  │  0001: LOAD A   │    │  A: 42          │                   │
+    │  │  0002: ADD B    │    │  B: 13          │                   │
+    │  │  0003: STORE C  │    │  C: ??          │                   │
+    │  │  0004: HALT     │    │  ...            │                   │
+    │  └─────────────────┘    └─────────────────┘                   │
+    └───────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ BUS SYSTEM
+                                    │ (Address, Data, Control)
+                                    │
+    ┌────────────────────────────────────────────────────────────────┐
+    │                    CENTRAL PROCESSING UNIT                     │
+    │                           (CPU)                                │
+    │                                                                │
+    │  ┌─────────────────────────┐    ┌─────────────────────────┐    │
+    │  │     CONTROL UNIT        │    │  ARITHMETIC LOGIC UNIT  │    │
+    │  │     (Styreenhed)        │    │        (ALU)            │    │
+    │  │                         │    │                         │    │
+    │  │ ┌─────────────────────┐ │    │ ┌─────────────────────┐ │    │
+    │  │ │ Instruction Decoder │ │    │ │   + - * / AND OR    │ │    │
+    │  │ │ Program Counter (PC)│ │    │ │   XOR NOT << >>     │ │    │
+    │  │ │ Control Signals     │ │    │ │                     │ │    │
+    │  │ └─────────────────────┘ │    │ └─────────────────────┘ │    │
+    │  └─────────────────────────┘    └─────────────────────────┘    │
+    │                                                                │
+    │  ┌─────────────────────────────────────────────────────────┐   │
+    │  │                    REGISTERS                            │   │
+    │  │  [A] [B] [C] [D]  [SP] [IR]  [FLAGS]                    │   │
+    │  └─────────────────────────────────────────────────────────┘   │
+    └────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ I/O BUS
+                                    │
+    ┌────────────────────────────────────────────────────────────────┐
+    │                      INPUT/OUTPUT                              │
+    │                                                                │
+    │  INPUT:              │                OUTPUT:                  │
+    │  ┌─────────────┐     │     ┌─────────────┐  ┌─────────────┐    │
+    │  │  Keyboard   │     │     │   Monitor   │  │   Printer   │    │
+    │  │     ⌨       │     │     │     📺      │  │     🖨      │    │
+    │  └─────────────┘     │     └─────────────┘  └─────────────┘    │
+    │  ┌─────────────┐     │     ┌─────────────┐  ┌─────────────┐    │
+    │  │    Mouse    │     │     │  Speakers   │  │   Network   │    │
+    │  │     🖱      │     │     │     🔊      │  │     🌐      │    │
+    │  └─────────────┘     │     └─────────────┘  └─────────────┘    │
+    └────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ Storage I/O Bus
+                                    │
+    ┌───────────────────────────────────────────────────────────────┐
+    │                   SECONDARY STORAGE                           │
+    │                 (Sekundær hukommelse)                         │
+    │                                                               │
+    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
+    │  │ Hard Drive  │  │     SSD     │  │  USB Drive  │            │
+    │  │     💽      │  │     ⚡       │  │     📱      │            │
+    │  │             │  │             │  │             │            │
+    │  │ • OS Files  │  │ • Programs  │  │ • Backup    │            │
+    │  │ • Documents │  │ • Games     │  │ • Transfer  │            │
+    │  │ • Media     │  │ • Fast Boot │  │             │            │
+    │  └─────────────┘  └─────────────┘  └─────────────┘            │
+    │                                                               │
+    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
+    │  │  DVD/CD     │  │ Cloud Store │  │ Tape Drive  │            │
+    │  │     💿      │  │     ☁       │  │     📼      │            │
+    │  │             │  │             │  │             │            │
+    │  │ • Software  │  │ • Sync Data │  │ • Archive   │            │
+    │  │ • Archives  │  │ • Remote    │  │ • Massive   │            │
+    │  │ • Legacy    │  │ • Backup    │  │ • Storage   │            │
+    │  └─────────────┘  └─────────────┘  └─────────────┘            │
+    │                                                               │
+    │              Data Flow: Secondary → Primary Memory            │
+    │              ↗↗↗↗ Load/Store Operations ↖↖↖↖                  │
+    └───────────────────────────────────────────────────────────────┘
+
+                        FETCH-DECODE-EXECUTE CYCLE:
+                        ===========================
+
+    1. FETCH:    CPU henter instruktion fra memory via bus
+    2. DECODE:   Control Unit afkoder instruktionen
+    3. EXECUTE:  ALU/Control Unit udfører operationen
+    4. REPEAT:   Program Counter opdateres, gentag fra 1
+
+                            Key Features:
+                            =============
+    • Stored Program Concept: Programmer og data i samme PRIMARY memory
+    • Sequential Execution: Instruktioner udføres en ad gangen
+    • Binary Representation: Alt data som 0'er og 1'er
+    • von Neumann Bottleneck: Kun én bus mellem CPU og PRIMARY memory
+    • Memory Hierarchy: PRIMARY (hurtig/volatile) + SECONDARY (langsom/persistent)
+```
+:::
+:::
+::::
+
+
+## Hardware (2)
+
+> *"Hardware is the sold, visible part of computing: devices and equipment that you can see and put your hands on.* (Kernighan, 2021: 7)
+
+:::: {.columns}
+::: {.column width="70%"} 
+#### von Neumann arkitekturen    
+::: {.incremental}
+2. Hukommelsen 
+  - Den *primære* hukommelse (**RAM**):  
+    - Information, der er i aktiv brug a processoren; informationen kan ændres af processoren  
+    - Gør det muligt at lave mere samtidigt på den samme computer
+    - **Volatil hukommelse**; når du slukker er det væk!     
+    - Størrelse måles i *bytes* (antal tegn; 8 GB = $8.000.000.000$)   
+:::
+
+::: 
+
+
+::: {.column width="30%"} 
+::: {style="font-size: 0.37em;"}
+```
+                    VON NEUMANN ARKITEKTUR
+                    =====================
+
+    ┌───────────────────────────────────────────────────────────────┐
+    │                           MEMORY                              │
+    │                         (Hukommelse)                          │
+    │                                                               │
+    │  ┌─────────────────┐    ┌─────────────────┐                   │
+    │  │   INSTRUCTIONS  │    │      DATA       │                   │
+    │  │   (Programmer)  │    │     (Data)      │                   │
+    │  │                 │    │                 │                   │
+    │  │  0001: LOAD A   │    │  A: 42          │                   │
+    │  │  0002: ADD B    │    │  B: 13          │                   │
+    │  │  0003: STORE C  │    │  C: ??          │                   │
+    │  │  0004: HALT     │    │  ...            │                   │
+    │  └─────────────────┘    └─────────────────┘                   │
+    └───────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ BUS SYSTEM
+                                    │ (Address, Data, Control)
+                                    │
+    ┌────────────────────────────────────────────────────────────────┐
+    │                    CENTRAL PROCESSING UNIT                     │
+    │                           (CPU)                                │
+    │                                                                │
+    │  ┌─────────────────────────┐    ┌─────────────────────────┐    │
+    │  │     CONTROL UNIT        │    │  ARITHMETIC LOGIC UNIT  │    │
+    │  │     (Styreenhed)        │    │        (ALU)            │    │
+    │  │                         │    │                         │    │
+    │  │ ┌─────────────────────┐ │    │ ┌─────────────────────┐ │    │
+    │  │ │ Instruction Decoder │ │    │ │   + - * / AND OR    │ │    │
+    │  │ │ Program Counter (PC)│ │    │ │   XOR NOT << >>     │ │    │
+    │  │ │ Control Signals     │ │    │ │                     │ │    │
+    │  │ └─────────────────────┘ │    │ └─────────────────────┘ │    │
+    │  └─────────────────────────┘    └─────────────────────────┘    │
+    │                                                                │
+    │  ┌─────────────────────────────────────────────────────────┐   │
+    │  │                    REGISTERS                            │   │
+    │  │  [A] [B] [C] [D]  [SP] [IR]  [FLAGS]                    │   │
+    │  └─────────────────────────────────────────────────────────┘   │
+    └────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ I/O BUS
+                                    │
+    ┌────────────────────────────────────────────────────────────────┐
+    │                      INPUT/OUTPUT                              │
+    │                                                                │
+    │  INPUT:              │                OUTPUT:                  │
+    │  ┌─────────────┐     │     ┌─────────────┐  ┌─────────────┐    │
+    │  │  Keyboard   │     │     │   Monitor   │  │   Printer   │    │
+    │  │     ⌨       │     │     │     📺      │  │     🖨      │    │
+    │  └─────────────┘     │     └─────────────┘  └─────────────┘    │
+    │  ┌─────────────┐     │     ┌─────────────┐  ┌─────────────┐    │
+    │  │    Mouse    │     │     │  Speakers   │  │   Network   │    │
+    │  │     🖱      │     │     │     🔊      │  │     🌐      │    │
+    │  └─────────────┘     │     └─────────────┘  └─────────────┘    │
+    └────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ Storage I/O Bus
+                                    │
+    ┌───────────────────────────────────────────────────────────────┐
+    │                   SECONDARY STORAGE                           │
+    │                 (Sekundær hukommelse)                         │
+    │                                                               │
+    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
+    │  │ Hard Drive  │  │     SSD     │  │  USB Drive  │            │
+    │  │     💽      │  │     ⚡       │  │     📱      │            │
+    │  │             │  │             │  │             │            │
+    │  │ • OS Files  │  │ • Programs  │  │ • Backup    │            │
+    │  │ • Documents │  │ • Games     │  │ • Transfer  │            │
+    │  │ • Media     │  │ • Fast Boot │  │             │            │
+    │  └─────────────┘  └─────────────┘  └─────────────┘            │
+    │                                                               │
+    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
+    │  │  DVD/CD     │  │ Cloud Store │  │ Tape Drive  │            │
+    │  │     💿      │  │     ☁       │  │     📼      │            │
+    │  │             │  │             │  │             │            │
+    │  │ • Software  │  │ • Sync Data │  │ • Archive   │            │
+    │  │ • Archives  │  │ • Remote    │  │ • Massive   │            │
+    │  │ • Legacy    │  │ • Backup    │  │ • Storage   │            │
+    │  └─────────────┘  └─────────────┘  └─────────────┘            │
+    │                                                               │
+    │              Data Flow: Secondary → Primary Memory            │
+    │              ↗↗↗↗ Load/Store Operations ↖↖↖↖                  │
+    └───────────────────────────────────────────────────────────────┘
+
+                        FETCH-DECODE-EXECUTE CYCLE:
+                        ===========================
+
+    1. FETCH:    CPU henter instruktion fra memory via bus
+    2. DECODE:   Control Unit afkoder instruktionen
+    3. EXECUTE:  ALU/Control Unit udfører operationen
+    4. REPEAT:   Program Counter opdateres, gentag fra 1
+
+                            Key Features:
+                            =============
+    • Stored Program Concept: Programmer og data i samme PRIMARY memory
+    • Sequential Execution: Instruktioner udføres en ad gangen
+    • Binary Representation: Alt data som 0'er og 1'er
+    • von Neumann Bottleneck: Kun én bus mellem CPU og PRIMARY memory
+    • Memory Hierarchy: PRIMARY (hurtig/volatile) + SECONDARY (langsom/persistent)
+```
+:::
+:::
+::::
+
+## Hardware (3)
+
+> *"Hardware is the sold, visible part of computing: devices and equipment that you can see and put your hands on.* (Kernighan, 2021: 7)
+
+:::: {.columns}
+::: {.column width="70%"} 
+#### von Neumann arkitekturen        
+::: {.incremental}
+2. Hukommelsen 
+  - Den *sekundære* hukommelse (**disken**):  
+    - Lagrer information, der er gemt efter computeren er slukket 
+    - *hard disk* eller *SSD* (solid state drive)  
+    - Indholdet er **præsenteret** i den mappestruktur, i ser på jeres computer (*filsystemet*)
+:::
+
+::: 
+
+
+::: {.column width="30%"} 
+::: {style="font-size: 0.37em;"}
+```
+                    VON NEUMANN ARKITEKTUR
+                    =====================
+
+    ┌───────────────────────────────────────────────────────────────┐
+    │                           MEMORY                              │
+    │                         (Hukommelse)                          │
+    │                                                               │
+    │  ┌─────────────────┐    ┌─────────────────┐                   │
+    │  │   INSTRUCTIONS  │    │      DATA       │                   │
+    │  │   (Programmer)  │    │     (Data)      │                   │
+    │  │                 │    │                 │                   │
+    │  │  0001: LOAD A   │    │  A: 42          │                   │
+    │  │  0002: ADD B    │    │  B: 13          │                   │
+    │  │  0003: STORE C  │    │  C: ??          │                   │
+    │  │  0004: HALT     │    │  ...            │                   │
+    │  └─────────────────┘    └─────────────────┘                   │
+    └───────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ BUS SYSTEM
+                                    │ (Address, Data, Control)
+                                    │
+    ┌────────────────────────────────────────────────────────────────┐
+    │                    CENTRAL PROCESSING UNIT                     │
+    │                           (CPU)                                │
+    │                                                                │
+    │  ┌─────────────────────────┐    ┌─────────────────────────┐    │
+    │  │     CONTROL UNIT        │    │  ARITHMETIC LOGIC UNIT  │    │
+    │  │     (Styreenhed)        │    │        (ALU)            │    │
+    │  │                         │    │                         │    │
+    │  │ ┌─────────────────────┐ │    │ ┌─────────────────────┐ │    │
+    │  │ │ Instruction Decoder │ │    │ │   + - * / AND OR    │ │    │
+    │  │ │ Program Counter (PC)│ │    │ │   XOR NOT << >>     │ │    │
+    │  │ │ Control Signals     │ │    │ │                     │ │    │
+    │  │ └─────────────────────┘ │    │ └─────────────────────┘ │    │
+    │  └─────────────────────────┘    └─────────────────────────┘    │
+    │                                                                │
+    │  ┌─────────────────────────────────────────────────────────┐   │
+    │  │                    REGISTERS                            │   │
+    │  │  [A] [B] [C] [D]  [SP] [IR]  [FLAGS]                    │   │
+    │  └─────────────────────────────────────────────────────────┘   │
+    └────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ I/O BUS
+                                    │
+    ┌────────────────────────────────────────────────────────────────┐
+    │                      INPUT/OUTPUT                              │
+    │                                                                │
+    │  INPUT:              │                OUTPUT:                  │
+    │  ┌─────────────┐     │     ┌─────────────┐  ┌─────────────┐    │
+    │  │  Keyboard   │     │     │   Monitor   │  │   Printer   │    │
+    │  │     ⌨       │     │     │     📺      │  │     🖨      │    │
+    │  └─────────────┘     │     └─────────────┘  └─────────────┘    │
+    │  ┌─────────────┐     │     ┌─────────────┐  ┌─────────────┐    │
+    │  │    Mouse    │     │     │  Speakers   │  │   Network   │    │
+    │  │     🖱      │     │     │     🔊      │  │     🌐      │    │
+    │  └─────────────┘     │     └─────────────┘  └─────────────┘    │
+    └────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ Storage I/O Bus
+                                    │
+    ┌───────────────────────────────────────────────────────────────┐
+    │                   SECONDARY STORAGE                           │
+    │                 (Sekundær hukommelse)                         │
+    │                                                               │
+    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
+    │  │ Hard Drive  │  │     SSD     │  │  USB Drive  │            │
+    │  │     💽      │  │     ⚡       │  │     📱      │            │
+    │  │             │  │             │  │             │            │
+    │  │ • OS Files  │  │ • Programs  │  │ • Backup    │            │
+    │  │ • Documents │  │ • Games     │  │ • Transfer  │            │
+    │  │ • Media     │  │ • Fast Boot │  │             │            │
+    │  └─────────────┘  └─────────────┘  └─────────────┘            │
+    │                                                               │
+    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
+    │  │  DVD/CD     │  │ Cloud Store │  │ Tape Drive  │            │
+    │  │     💿      │  │     ☁       │  │     📼      │            │
+    │  │             │  │             │  │             │            │
+    │  │ • Software  │  │ • Sync Data │  │ • Archive   │            │
+    │  │ • Archives  │  │ • Remote    │  │ • Massive   │            │
+    │  │ • Legacy    │  │ • Backup    │  │ • Storage   │            │
+    │  └─────────────┘  └─────────────┘  └─────────────┘            │
+    │                                                               │
+    │              Data Flow: Secondary → Primary Memory            │
+    │              ↗↗↗↗ Load/Store Operations ↖↖↖↖                  │
+    └───────────────────────────────────────────────────────────────┘
+
+                        FETCH-DECODE-EXECUTE CYCLE:
+                        ===========================
+
+    1. FETCH:    CPU henter instruktion fra memory via bus
+    2. DECODE:   Control Unit afkoder instruktionen
+    3. EXECUTE:  ALU/Control Unit udfører operationen
+    4. REPEAT:   Program Counter opdateres, gentag fra 1
+
+                            Key Features:
+                            =============
+    • Stored Program Concept: Programmer og data i samme PRIMARY memory
+    • Sequential Execution: Instruktioner udføres en ad gangen
+    • Binary Representation: Alt data som 0'er og 1'er
+    • von Neumann Bottleneck: Kun én bus mellem CPU og PRIMARY memory
+    • Memory Hierarchy: PRIMARY (hurtig/volatile) + SECONDARY (langsom/persistent)
+```
+:::
+:::
+::::
+
+## Hardware (3)
+
+> *"Hardware is the sold, visible part of computing: devices and equipment that you can see and put your hands on.* (Kernighan, 2021: 7)
+
+:::: {.columns}
+::: {.column width="70%"} 
+#### von Neumann arkitekturen        
+::: {.incremental}
+::: {style="font-size: 0.7em;"}
+3. Bus-systemet:  
+  - **Adressebus**: Transporterer hukommelsesadresser fra CPU til hukommelse og I/O enheder    
+    - Ensrettet: kun CPU sender adresser    
+  - **Databus**: Transporterer selve dataene mellem komponenter    
+    - Torettet: data kan flyttes begge veje   
+  - **Kontrolbus**: Sender kontrolsignaler der koordinerer alle operationer   
+    - READ, WRITE, CLOCK, RESET, INTERRUPT   
+  - bus-**flaskehalsen**: Kun én komponent kan bruge bussen ad gangen
+    - CPU kan ikke hente instrukser og data samtidigt; CPU må ofte vente på data fra langsom hukommelse
+:::
+:::
+
+::: 
+
+
+::: {.column width="30%"} 
+::: {style="font-size: 0.37em;"}
+```
+                    VON NEUMANN ARKITEKTUR
+                    =====================
+
+    ┌───────────────────────────────────────────────────────────────┐
+    │                           MEMORY                              │
+    │                         (Hukommelse)                          │
+    │                                                               │
+    │  ┌─────────────────┐    ┌─────────────────┐                   │
+    │  │   INSTRUCTIONS  │    │      DATA       │                   │
+    │  │   (Programmer)  │    │     (Data)      │                   │
+    │  │                 │    │                 │                   │
+    │  │  0001: LOAD A   │    │  A: 42          │                   │
+    │  │  0002: ADD B    │    │  B: 13          │                   │
+    │  │  0003: STORE C  │    │  C: ??          │                   │
+    │  │  0004: HALT     │    │  ...            │                   │
+    │  └─────────────────┘    └─────────────────┘                   │
+    └───────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ BUS SYSTEM
+                                    │ (Address, Data, Control)
+                                    │
+    ┌────────────────────────────────────────────────────────────────┐
+    │                    CENTRAL PROCESSING UNIT                     │
+    │                           (CPU)                                │
+    │                                                                │
+    │  ┌─────────────────────────┐    ┌─────────────────────────┐    │
+    │  │     CONTROL UNIT        │    │  ARITHMETIC LOGIC UNIT  │    │
+    │  │     (Styreenhed)        │    │        (ALU)            │    │
+    │  │                         │    │                         │    │
+    │  │ ┌─────────────────────┐ │    │ ┌─────────────────────┐ │    │
+    │  │ │ Instruction Decoder │ │    │ │   + - * / AND OR    │ │    │
+    │  │ │ Program Counter (PC)│ │    │ │   XOR NOT << >>     │ │    │
+    │  │ │ Control Signals     │ │    │ │                     │ │    │
+    │  │ └─────────────────────┘ │    │ └─────────────────────┘ │    │
+    │  └─────────────────────────┘    └─────────────────────────┘    │
+    │                                                                │
+    │  ┌─────────────────────────────────────────────────────────┐   │
+    │  │                    REGISTERS                            │   │
+    │  │  [A] [B] [C] [D]  [SP] [IR]  [FLAGS]                    │   │
+    │  └─────────────────────────────────────────────────────────┘   │
+    └────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ I/O BUS
+                                    │
+    ┌────────────────────────────────────────────────────────────────┐
+    │                      INPUT/OUTPUT                              │
+    │                                                                │
+    │  INPUT:              │                OUTPUT:                  │
+    │  ┌─────────────┐     │     ┌─────────────┐  ┌─────────────┐    │
+    │  │  Keyboard   │     │     │   Monitor   │  │   Printer   │    │
+    │  │     ⌨       │     │     │     📺      │  │     🖨      │    │
+    │  └─────────────┘     │     └─────────────┘  └─────────────┘    │
+    │  ┌─────────────┐     │     ┌─────────────┐  ┌─────────────┐    │
+    │  │    Mouse    │     │     │  Speakers   │  │   Network   │    │
+    │  │     🖱      │     │     │     🔊      │  │     🌐      │    │
+    │  └─────────────┘     │     └─────────────┘  └─────────────┘    │
+    └────────────────────────────────────────────────────────────────┘
+                                    │
+                                    │ Storage I/O Bus
+                                    │
+    ┌───────────────────────────────────────────────────────────────┐
+    │                   SECONDARY STORAGE                           │
+    │                 (Sekundær hukommelse)                         │
+    │                                                               │
+    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
+    │  │ Hard Drive  │  │     SSD     │  │  USB Drive  │            │
+    │  │     💽      │  │     ⚡       │  │     📱      │            │
+    │  │             │  │             │  │             │            │
+    │  │ • OS Files  │  │ • Programs  │  │ • Backup    │            │
+    │  │ • Documents │  │ • Games     │  │ • Transfer  │            │
+    │  │ • Media     │  │ • Fast Boot │  │             │            │
+    │  └─────────────┘  └─────────────┘  └─────────────┘            │
+    │                                                               │
+    │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐            │
+    │  │  DVD/CD     │  │ Cloud Store │  │ Tape Drive  │            │
+    │  │     💿      │  │     ☁       │  │     📼      │            │
+    │  │             │  │             │  │             │            │
+    │  │ • Software  │  │ • Sync Data │  │ • Archive   │            │
+    │  │ • Archives  │  │ • Remote    │  │ • Massive   │            │
+    │  │ • Legacy    │  │ • Backup    │  │ • Storage   │            │
+    │  └─────────────┘  └─────────────┘  └─────────────┘            │
+    │                                                               │
+    │              Data Flow: Secondary → Primary Memory            │
+    │              ↗↗↗↗ Load/Store Operations ↖↖↖↖                  │
+    └───────────────────────────────────────────────────────────────┘
+
+                        FETCH-DECODE-EXECUTE CYCLE:
+                        ===========================
+
+    1. FETCH:    CPU henter instruktion fra memory via bus
+    2. DECODE:   Control Unit afkoder instruktionen
+    3. EXECUTE:  ALU/Control Unit udfører operationen
+    4. REPEAT:   Program Counter opdateres, gentag fra 1
+
+                            Key Features:
+                            =============
+    • Stored Program Concept: Programmer og data i samme PRIMARY memory
+    • Sequential Execution: Instruktioner udføres en ad gangen
+    • Binary Representation: Alt data som 0'er og 1'er
+    • von Neumann Bottleneck: Kun én bus mellem CPU og PRIMARY memory
+    • Memory Hierarchy: PRIMARY (hurtig/volatile) + SECONDARY (langsom/persistent)
+```
+:::
+:::
+::::
+
+
+
+
+
+
+
+
+
+
+
+
+# CPU'en {background-image="resources/cpu.png" background-size="50%" background-position="center" background-repeat="no-repeat" background-opacity="0.6"}
+
+
+## Computerens hjerne
+
+:::: {.columns}
+::: {.column width="50%"} 
+
+En processor er grundlæggende milliarder af transistorer arrangeret i komplekse mønstre, der kan:    
+
+1. Gemme information    
+2. Behandle information (ALU)    
+3. Styre dataflow (control unit) 
+
+- **Transistorniveau**: Milliarder af elektroniske switches der kan være tændt eller slukket    
+- **Logic gates**: Kombinationer af transistorer der implementerer `AND`, `OR`, `NOT` operationer   
+
+:::
+
+::: {.column width="50%"} 
+::: {style="font-size: 0.7em;"}
+
+```
+    PROCESSOR OPERATION: 2+2
+    ========================
+
+    Antag vi har to værdier gemt i RAM og vil lægge dem sammen:
+
+    Assembly kode:
+    ┌─────────────────────────────────────────────────────────────┐
+    │ MOV EAX, [0x2000]   ; Load value from RAM address 0x2000    │
+    │ ADD EAX, [0x2004]   ; Add value from RAM address 0x2004     │
+    │ MOV [0x2008], EAX   ; Store result back to RAM              │
+    └─────────────────────────────────────────────────────────────┘
+
+    RAM Layout:
+    ┌─────────────┬─────────────────────────────────────────────┐
+    │  ADDRESS    │              CONTENT                        │
+    ├─────────────┼─────────────────────────────────────────────┤
+    │   0x2000    │  00000002  (tallet 2)                       │
+    │   0x2004    │  00000002  (tallet 2)                       │
+    │   0x2008    │  ????????  (plads til resultat)             │
+    └─────────────┴─────────────────────────────────────────────┘
+
+    Final RAM state:
+    ┌─────────────┬─────────────────────────────────────────────┐
+    │  ADDRESS    │              CONTENT                        │
+    ├─────────────┼─────────────────────────────────────────────┤
+    │   0x2000    │  00000002  (original: 2)                    │
+    │   0x2004    │  00000002  (original: 2)                    │
+    │   0x2008    │  00000004  (result: 4)                      │
+    └─────────────┴─────────────────────────────────────────────┘
+```
+:::
+:::
+::::
+
+
+
+
+
+## Moore*s* Lov
+
+```
+
+  Mircochip Transistor Count (proxy for computerkraft)
+      |
+   1M |                                     . ==> Eksponentielt vækst har været en tendens.
+      |                                   .       Fortsætter det?!
+ 100K |                                 .
+      |                               .
+  10K |                             .
+      |                           .
+   1K |                        .
+      |                     .
+  100 |                  .
+      |              .
+   10 |          .
+      |      .
+    1 +--------------------------------------------->
+         '70  '80  '90  '00  '10  '20
+                    Year
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Repræsentation af information: *Bits* og *Bytes*
+
+## Digital og analog information 
+
+![](resources/signal.png){width=10%}
+
+## Digital information (1)
+
+:::: {.columns}
+::: {.column width="50%"} 
+#### Bits og Bytes
+::: {.incremental}
+::: {style="font-size: 1.0em;"}
+
+- **Bit** (Binary Digit) er den mindste informationsenhed: $0$ eller $1$    
+- **Byte** består af 8 bits og er grundenheden for næsten al computerhukommelse. En byte kan repræsentere $256$ forskellige værdier ($0-255$).
+:::
+:::
+::: 
+
+::: {.column width="50%"} 
+::: {style="font-size: 0.7em;"}
+```
+    BIT = Binary digit (0 eller 1)
+    ===============================
+    ┌───┐    ┌───┐
+    │ 0 │    │ 1 │  ← To mulige værdier
+    └───┘    └───┘
+     OFF      ON
+    False    True
+     Low     High
+
+Computere bruger binært fordi elektroniske kredsløb 
+naturligt har to tilstande: strøm eller ingen strøm.
+
+
+    BYTE = 8 bits sammen
+    ====================
+
+    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+    │ 0 │ 1 │ 0 │ 1 │ 1 │ 0 │ 1 │ 0 │  ← 1 byte = 8 bits
+    └───┴───┴───┴───┴───┴───┴───┴───┘
+     128  64  32  16   8   4   2   1   ← Positionsværdier
+      ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓
+      0 + 64+ 0 + 16+ 8 + 0 + 2 + 0 = 90 (decimal)
+
+Hver gang vi gemmer en fil, sender en besked eller 
+åbner et program, arbejder computeren med millioner 
+af disse simple 0'er og 1'er organiseret i bytes
+```
+:::
+:::
+::::
+
+
+## Digital information (2)
+
+:::: {.columns}
+::: {.column width="50%"} 
+#### Bits og Bytes
+::: {style="font-size: 1.0em;"}
+
+- **Bit** (Binary Digit) er den mindste informationsenhed: $0$ eller $1$    
+- **Byte** består af 8 bits og er grundenheden for næsten al computerhukommelse. En byte kan repræsentere $256$ forskellige værdier ($0-255$).
+:::
+:::
+
+::: {.column width="50%"} 
+::: {style="font-size: 0.7em;"}
+```
+    EKSEMPEL: Bogstavet 'A' 
+    ========================
+
+    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+    │ 0 │ 1 │ 0 │ 0 │ 0 │ 0 │ 0 │ 1 │  = 65 decimal = 'A'
+    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+    │ 0 │ 1 │ 1 │ 0 │ 0 │ 0 │ 0 │ 1 │  = 97 decimal = 'a'
+    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+    BINÆRE TALSYSTEMER
+    =================
+
+    Decimal (base 10): 0,1,2,3,4,5,6,7,8,9
+    Binary (base 2):   0,1
+
+    Counting in binary:
+    ┌─────────┬─────────┐
+    │ Decimal │ Binary  │
+    ├─────────┼─────────┤
+    │    0    │   0000  │
+    │    1    │   0001  │
+    │    2    │   0010  │
+    │    3    │   0011  │
+    │    4    │   0100  │
+    │    5    │   0101  │
+    │    6    │   0110  │
+    │    7    │   0111  │
+    │    8    │   1000  │
+    │    9    │   1001  │
+    │   10    │   1010  │
+    │   15    │   1111  │
+    │   16    │  10000  │
+    │  255    │11111111 │
+    └─────────┴─────────┘
+
+    4 bytes = 32 bits = kan repræsentere tal fra -2,147,483,648 
+                                             til  2,147,483,647
+```
+:::
+:::
+::::
+
+## Digital information (3)
+
+:::: {.columns}
+::: {.column width="50%"} 
+#### Bits og Bytes
+::: {style="font-size: 1.0em;"}
+
+- Alt hukommelse i en computer måles i bytes (**KB**, **MB**, **GB**, **TB**) 
+- Forskellige datatyper bruger forskellige antal bytes
+:::
+:::
+
+::: {.column width="50%"} 
+::: {style="font-size: 0.7em;"}
+```
+    DATATYPER OG STØRRELSE
+    ======================
+
+    ┌─────────────────┬──────────┬─────────────────┬──────────────┐
+    │    DATATYPE     │  BYTES   │      BITS       │   RANGE      │
+    ├─────────────────┼──────────┼─────────────────┼──────────────┤
+    │ Character       │    1     │        8        │   0-255      │
+    │ Boolean         │    1     │        1        │  True/False  │
+    │ Short Integer   │    2     │       16        │  -32K-32K    │
+    │ Integer         │    4     │       32        │  -2B-2B      │
+    │ Long Integer    │    8     │       64        │ -9E18-9E18   │
+    │ Float           │    4     │       32        │ ±3.4E38      │
+    │ Double          │    8     │       64        │ ±1.8E308     │
+    └─────────────────┴──────────┴─────────────────┴──────────────┘
+
+    STØRRELSES HIERARKI
+    ==================
+
+    1 Bit                   = 0 eller 1
+    8 Bits                  = 1 Byte
+    1024 Bytes              = 1 Kilobyte (KB)
+    1024 KB                 = 1 Megabyte (MB)
+    1024 MB                 = 1 Gigabyte (GB)
+    1024 GB                 = 1 Terabyte (TB)
+    1024 TB                 = 1 Petabyte (PB)
+
+    ┌────────────────────────────────────────────────────────────┐
+    │                    VISUEL STØRRELSE                        │
+    │                                                            │
+    │ 1 bit:     [•]                                             │
+    │ 1 byte:    [••••••••]                                      │
+    │ 1 KB:      [████████] x 128 rækker                         │
+    │ 1 MB:      En bog på ~500 sider                            │
+    │ 1 GB:      ~1000 bøger eller 1 time HD video               │
+    │ 1 TB:      En million bøger eller hele Netflix library     │
+    └────────────────────────────────────────────────────────────┘
+
+
+```
+:::
+:::
+::::
+
+## Digital information (4)
+
+:::: {.columns}
+::: {.column width="50%"} 
+#### Bits og Bytes
+::: {style="font-size: 0.7em;"}
+```
+    BILLEDE LAGRING I BITS OG BYTES
+    ===============================
+
+    Et digitalt billede består af PIXELS (picture elements)
+    Hver pixel har en farve repræsenteret som tal
+
+    Simpelt 3x3 sort/hvid billede:
+    ┌───┬───┬───┐
+    │⬛ │⬜ │⬛ │  ← Visuelt
+    ├───┼───┼───┤
+    │⬜ │⬛ │⬜ │
+    ├───┼───┼───┤
+    │⬛ │⬜ │⬛ │
+    └───┴───┴───┘
+
+    Konverteret til tal (0=sort, 1=hvid):
+    ┌───┬───┬───┐
+    │ 0 │ 1 │ 0 │  ← Som tal
+    ├───┼───┼───┤
+    │ 1 │ 0 │ 1 │
+    ├───┼───┼───┤
+    │ 0 │ 1 │ 0 │
+    └───┴───┴───┘
+
+    I hukommelse: 010101010 (9 bits = 1.125 bytes)
+
+```
+:::
+:::
+
+::: {.column width="50%"} 
+::: {style="font-size: 0.7em;"}
+```
+    GRÅTONER (8-BIT)
+    ===============
+
+    Hver pixel kan have 256 gråtoner (0-255):
+
+    ┌─────┬─────┬─────┐
+    │  0  │ 128 │ 255 │  ← Talværdier
+    ├─────┼─────┼─────┤
+    │ ⬛  │ ▒▒  │ ⬜  │  ← Visuel repræsentation
+    └─────┴─────┴─────┘
+     Sort  Grå   Hvid
+
+    Hver pixel = 1 byte = 8 bits
+    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+    │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ = 0 (sort)
+    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+    │ 1 │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ = 128 (grå)
+    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+    │ 1 │ 1 │ 1 │ 1 │ 1 │ 1 │ 1 │ 1 │ = 255 (hvid)
+    └───┴───┴───┴───┴───┴───┴───┴───┘
+
+
+```
+:::
+:::
+::::
+
+## Digital information (4)
+
+:::: {.columns}
+::: {.column width="50%"} 
+#### Bits og Bytes
+::: {style="font-size: 0.7em;"}
+```
+    RGB FARVER (24-BIT)
+    ==================
+
+    Hver pixel har 3 farvekanaler: Rød, Grøn, Blå
+    Hver kanal: 0-255 (1 byte)
+    Total per pixel: 3 bytes = 24 bits
+
+    ┌─────────────┬─────────────┬─────────────┬─────────────┐
+    │    FARVE    │     RØD     │    GRØN     │     BLÅ     │
+    ├─────────────┼─────────────┼─────────────┼─────────────┤
+    │    Sort     │      0      │      0      │      0      │
+    │    Hvid     │    255      │    255      │    255      │
+    │    Rød      │    255      │      0      │      0      │
+    │    Grøn     │      0      │    255      │      0      │
+    │    Blå      │      0      │      0      │    255      │
+    │    Gul      │    255      │    255      │      0      │
+    │  Magenta    │    255      │      0      │    255      │
+    │    Cyan     │      0      │    255      │    255      │
+    └─────────────┴─────────────┴─────────────┴─────────────┘
+
+    Eksempel: En rød pixel (255,0,0) i hukommelse:
+    ┌───┬───┬───┬───┬───┬───┬───┬───┐ ┌───┬───┬───┬───┬───┬───┬───┬───┐ 
+    │ 1 │ 1 │ 1 │ 1 │ 1 │ 1 │ 1 │ 1 │ │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ 
+    └───┴───┴───┴───┴───┴───┴───┴───┘ └───┴───┴───┴───┴───┴───┴───┴───┘ 
+              255 (Rød)                         0 (Grøn)               
+    ┌───┬───┬───┬───┬───┬───┬───┬───┐
+    │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │ 0 │
+    └───┴───┴───┴───┴───┴───┴───┴───┘
+             0 (Blå)
+``` 
+:::
+:::
+
+::: {.column width="50%"} 
+::: {style="font-size: 0.7em;"}
+```
+    HUKOMMELSE LAYOUT
+    ================
+
+    Sådan ser et 3x2 RGB billede ud i computerens hukommelse:
+
+    Visuelt billede:
+    ┌─────┬─────┬─────┐
+    │ 🔴  │ 🟢  │ 🔵  │  ← Række 1
+    ├─────┼─────┼─────┤
+    │ ⬜  │ ⬛  │ 🟡  │  ← Række 2
+    └─────┴─────┴─────┘
+
+    I hukommelse (row-major order):
+    Memory Address:│ Byte │ Værdi │ Farve
+    ───────────────┼──────┼───────┼─────────
+    0x1000         │  R   │ 255   │ 🔴 Rød
+    0x1001         │  G   │   0   │
+    0x1002         │  B   │   0   │
+    0x1003         │  R   │   0   │ 🟢 Grøn
+    0x1004         │  G   │ 255   │
+    0x1005         │  B   │   0   │
+    0x1006         │  R   │   0   │ 🔵 Blå
+    0x1007         │  G   │   0   │
+    0x1008         │  B   │ 255   │
+    0x1009         │  R   │ 255   │ ⬜ Hvid
+    0x100A*        │  G   │ 255   │
+    0x100B         │  B   │ 255   │
+    0x100C         │  R   │   0   │ ⬛ Sort
+    0x100D         │  G   │   0   │
+    0x100E         │  B   │   0   │
+    0x100F         │  R   │ 255   │ 🟡 Gul
+    0x1010         │  G   │ 255   │
+    0x1011         │  B   │   0   │
+
+    * hexadecimal (base 16) i stedet for decimal (base 10):
+      0x100A = 0001000000001010
+      0x1000 = 0001000000000000
+      Decimal: 0001000000000000 = 1×2¹² = 1×4096 = 4096
+```
+:::
+:::
+::::
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Kode?! {background-image="resources/snake.png" background-size="70%" background-position="center" background-repeat="no-repeat" background-opacity="0.4"}  
+
+
+## Erfaring? 
+
+- Hvad er jeres erfaring (hvis I har nogen)? 
+
+- Hvordan forstår i "kodning"; hvorfor bruger vi ikke bare Excel eller lign.? 
+
+- Hvis I har erfaring; er det en god erfaring? Hvordan lærte i det bedst; hvad var svært? 
+
+<span class="timer" data-time="300"></span>
+
+## Dataanalyse som case: "Kodning" vs. Excel 
+
+### *Reproducerbar*, *skalerbar*, *fleksibel* og *automatisering*!
+
+Når Excel kommer til kort: 
+
+- Analysere 100.000-vis af rækker data.
+
+- Gentage den samme analyse hver [dag/måned/år] med nye data.
+
+  - I Excel: hvis data ændrer sig, skal vi gentage alle klik.
+
+- Dokumentere præcist, hvad vi har gjort, så en kollega kan gentage det.
+
+- Kombinere data fra [mange] forskellige kilder.
+
+- Lave avancerede statistiske modeller.
+
+## Python; et kodesprog 
+
+<span class="timer" data-time="180"></span>
+
+Tænk på kodning som et *meget detaljeret* opskrift. Så fremfor en abstract "bland ingredienserne" (Excel; peg-og-klik), skriver vi: 
+
+<div class="code-container">
+<div class="code-input">
+<textarea class="python-editor" id="code1">
+
+# Hent biblioteker
+import pandas as pd
+from io import StringIO
+
+# Hent data fra URL
+url = "https://tinyurl.com/3p843y7k"
+
+data = pd.read_csv(StringIO(csv_data))
+
+# Beregn gennemsnit for hver måned
+monthly_average = data.groupby('month')['sales'].mean()
+
+print("\nMånedlige gennemsnit:")
+print(monthly_average)
+
+</textarea>
+<button class="run-button" onclick="runPython(document.getElementById('code1').value, 'output1')">
+  <img src="resources/python-file.png" alt="Python" style="height: 50px;">
+</button>
+<button class="reset-button" onclick="resetPythonGlobals()">
+  <img src="resources/dust.png" alt="Python" style="height: 50px;">
+</button>
+</div>
+<div class="code-output" id="output1"></div>
+</div>
+
+
+
+## Reproducerbar
+
+> Hvordan fik du resultatet? 
+
+`monthly_average = data.groupby('month')['sales'].mean()`
+
+<br><br>
+
+*Alle trin i koden er en komplet **log** over hvad du har gjort ved dataen for at få dit output*. 
+
+Når næste års data kommer, ændres blot `url = "https://...."` til den nye data og det hele køres igen. 
+
+## Skalerbarhed
+
+*Den samme kode, der arbejder med 100 rækker, kan håndtere millioner af rækker uden problemer.* 
+
+<br><br>
+
+Flere rækker kræver dog logisk nok mere computerkraft og tid. 
+
+## Fleksibilitet
+
+*Python har tusindvis af specialiserede "værktøjskasser" (biblioteker) til alt fra grundlæggende statistik og datahåndtering til machine learning og kunstig intelligens.*
+
+## Automatisering 
+
+*Skriv koden én gang:* kør den hver dag/uge/måned/år automatisk.
+
+## Kodning: *Kommunikation med maskinen* 
+
+Kodning skal være *utvetydigt og logisk struktureret* for at maskinen "forstår" os.
+
+I skal på kurset oparbejde en **algoritmisk tænkning**. 
+
+---
+
+<span class="timer" data-time="180"></span>
+
+
+::: {.incremental}
+
+**Spg.:** Hvad tænker I når i hører ordet *'Algoritme'*?
+
+- *Algoritmisk tænkning*:
+
+  - **Dekomposition**: Bryde komplekse problemer ned i mindre, håndterbare dele
+  - **Mønstergenkendelse**: Identificere ligheder på tværs af forskellige problemer
+  - **Abstraktion**: Fokusere på de væsentlige aspekter og ignorere irrelevante detaljer
+  - **Algoritmedesign**: Step-by-step løsninger der kan automatiseres
+
+:::
+
+## Hvorfor Python? 🐍
+
+- (Relativt) simpelt. 
+
+- Stor brugerbase. 
+
+- Omfattende biblioteker til alle forskningsområder.
+
+## Kodning af en tanke til handling i 4 niveauer
+
+## *Niveau 1*: Menneskelig tanke
+
+> "Jeg vil finde gennemsnittet af mine salgstal"
+
+## *Niveau 2*: Algoritmisk tænkning
+
+> "Læg alle tallene sammen, divider med antallet af tal"
+
+<br><br><br><br>
+
+$$
+\bar{x} = \frac{x_1 + x_2 + x_3 + \ldots + x_n}{n} = \frac{\sum_{i=1}^{n} x_i}{n}
+$$
+
+## *Niveau 3*: Python-kode
+
+<div class="code-container">
+<div class="code-input">
+<textarea class="python-editor" id="code2">
+
+total = sum(data['sales'])  
+
+gennemsnit = total / len(data['sales'])
+
+print(f"Total salg: {total}")
+print(f"Gennemsnit: {gennemsnit}")
+
+</textarea>
+<button class="run-button" onclick="runPython(document.getElementById('code2').value, 'output2')">
+  <img src="resources/python-file.png" alt="Python" style="height: 50px;">
+</button>
+<button class="reset-button" onclick="resetPythonGlobals()">
+  <img src="resources/dust.png" alt="Python" style="height: 50px;">
+</button>
+</div>
+<div class="code-output" id="output2"></div>
+</div>
+
+::: {.incremental}
+
+Hvad har vi implementeret her: 
+
+1. $\text{total} = \sum_{i=1}^{n} \text{sales}_i$
+
+2. $\text{gennemsnit} = \frac{\text{total}}{n} = \frac{\sum_{i=1}^{n} \text{sales}_i}{n}$, Hvor $n$ er antallet af salgstal i datasættet.
+
+3. Udskriv resultatet
+
+:::
+
+## *Niveau 4*: Maskinsprog 
+
+Maskinen forstår ikke `Python` (?!)
+
+- Computeren forstår kun maskinkode. Dette er lav-niveau instruktioner bestående af $1$-taller og $0$'er (binary), som **CPU**'en kan arbejde med.
+
+- **Python-fortolkeren** oversætter altså koden til noget som maskinen kan forstå; og Python er muligt at læse for mennesker. 
+
+- Denne oversættelse forgår i en mellemform (assembly-sprog), der er **meget** mere besværligt at arbejde med end Python. 
+
+---
+
+**Process:**
+
+Høj-niveau: 
+
+```
+total = sum(data)  
+gennemsnit = total / len(data)
+```
+
+Mellem-niveau: 
+
+```
+LOAD data
+ADD all values
+DIVIDE by count
+STORE result
+```
+
+Lav-niveau: 
+
+```
+10110000 01100001
+```
+
+## Præcision er nøglen! 
+
+> "Kan du hente en kop kaffen?" 
+
+Vi forstår implicit: **Gå ud i køkkenet, tag en kop, hæld kaffe i koppen, kom tilbage**.
+
+Oversat til eksplicitte instruktioner:
+
+::: {.incremental}
+
+1. `cup = get_cup_from_kitchen()`
+2. `coffee = pour_coffee(cup)`
+3. `return coffee_to_desk(cup)`
+
+:::
+
+## Præcise instrukser 
+
+> Hvilke salg er større end 10.000 (DKK)?
+
+1. Tag første tal fra listen
+2. Er det større end 10.000? Hvis ja, print det
+3. Tag næste tal
+4. Gentag (2)
+5. Gentag 1-4 indtil listen er tom
+
+---
+
+
+<div class="code-container">
+<div class="code-input">
+<textarea class="python-editor" id="code1.1">
+
+for tal in data['sales']:
+    if tal > 10000:
+        print("Højt salg:", tal)
+
+</textarea>
+<button class="run-button" onclick="runPython(document.getElementById('code1.1').value, 'output1.1')">
+  <img src="resources/python-file.png" alt="Python" style="height: 50px;">
+</button>
+<button class="reset-button" onclick="resetPythonGlobals()">
+  <img src="resources/dust.png" alt="Python" style="height: 50px;">
+</button>
+</div>
+<div class="code-output" id="output1.1"></div>
+</div>
+
+$$
+\begin{aligned}
+\textbf{for hvert } \text{tal} ~ i ~ \text{salgstal}: \\
+\quad \textbf{hvis } \text{tal} ~større~end~ 10000: \\
+\qquad \textbf{udskriv} ~ \text{tal} ~~
+\end{aligned}
+$$
+
+## Variable og Pythons *hukommelse* 
+
+**Bemærk**: `data` har virket flere steder i vores kode, selvom vi kun har indlæst den én gang. 
+
+<div class="code-container">
+<div class="code-input">
+<textarea class="python-editor" id="code3">
+
+pris = 100
+
+moms = pris * 0.25
+
+total = pris + moms
+
+print(total)
+
+</textarea>
+<button class="run-button" onclick="runPython(document.getElementById('code3').value, 'output3')">
+  <img src="resources/python-file.png" alt="Python" style="height: 50px;">
+</button>
+<button class="reset-button" onclick="resetPythonGlobals()">
+  <img src="resources/dust.png" alt="Python" style="height: 50px;">
+</button>
+</div>
+<div class="code-output" id="output3"></div>
+</div>
+
+---
+
+<br><br>
+
+```
+pris = 100
+
+moms = pris * 0.25
+
+total = pris + moms
+
+print(total)
+```
+
+<br>
+
+1. Tag værdien 100 og gem det i **hukommelseslokation** kaldet 'pris'
+
+2. Tag værdien fra 'pris', gang med 0.25, gem resultatet som 'moms'
+
+Maskinen er ligeglad med om navne giver mening. Vi bruger **meningsfulde navne** for at forstå vores egen kode. 
+
+## Funktioner: Genanvendelige "opskrifter"
+
+**Defination af funktioner** svarer til at lære maskinen en ny "kommando". Nu kan vi sige `beregn_moms(tal)` og maskinen ved præcist, hvad den skal gøre, fordi vi har defineret hver eneste trin.
+
+<div class="code-container">
+<div class="code-input">
+<textarea class="python-editor" id="code4">
+
+def beregn_moms(pris, moms_sats=0.25):
+    return pris * moms_sats
+
+</textarea>
+<button class="run-button" onclick="runPython(document.getElementById('code4').value, 'output4')">
+  <img src="resources/python-file.png" alt="Python" style="height: 50px;">
+</button>
+<button class="reset-button" onclick="resetPythonGlobals()">
+  <img src="resources/dust.png" alt="Python" style="height: 50px;">
+</button>
+</div>
+<div class="code-output" id="output4"></div>
+</div>
+
+---
+
+<div class="code-container">
+<div class="code-input">
+<textarea class="python-editor" id="code5">
+
+print(beregn_moms(12485))
+
+print(beregn_moms(12485, moms_sats=0.12))
+
+</textarea>
+<button class="run-button" onclick="runPython(document.getElementById('code5').value, 'output5')">
+  <img src="resources/python-file.png" alt="Python" style="height: 50px;">
+</button>
+<button class="reset-button" onclick="resetPythonGlobals()">
+  <img src="resources/dust.png" alt="Python" style="height: 50px;">
+</button>
+</div>
+<div class="code-output" id="output5"></div>
+</div>
+
+## Den fundamentale erkendelse om maskiner 
+
+Maskiner er "dumme" men **utroligt hurtige og pålidelige**. De kan kun gøre simple ting som:
+
+- Gemme tal
+- Sammenligne værdier
+- Hoppe til forskellige dele af koden
+- Gentage instruktioner
+
+Men de kan gøre disse simple ting milliarder af gange per sekund uden fejl.
+
+> **Kodningens kunst** ligger i at bryde komplekse menneskelige problemer ned til disse simple operationer og derefter komponere dem sammen til kraftfulde løsninger.
+
+# Hvad skal der ske herfra? {background-image="resources/teaching.png" background-size="50%" background-position="center" background-repeat="no-repeat" background-opacity="0.6"}
